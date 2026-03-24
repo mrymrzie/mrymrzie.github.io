@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maryam Rezaie | Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #1e3a8a;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 14px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 14px 20px 0;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      padding: 10px 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .nav-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 14px;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    .about-wrapper {
+      max-width: 1100px;
+      margin: 28px auto 20px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .about-photo img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .about-text h1 {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .location svg {
+      width: 16px;
+      height: 16px;
+      fill: #6b7280;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-header {
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #0f172a;
+    }
+
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 20px;
+      padding: 22px 24px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .news-date {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .news-main {
+      font-size: 17px;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+
+    .news-title {
+      font-size: 17px;
+      font-style: italic;
+      color: #111827;
+    }
+
+    .section-footer {
+      margin-top: 14px;
+    }
+
+    .more-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .more-link:hover {
+      text-decoration: underline;
+    }
+
+    .publications {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .publication-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 20px;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .publication-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 220px;
+      display: block;
+    }
+
+    .publication-text {
+      padding: 20px;
+    }
+
+    .publication-text h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #111827;
+      line-height: 1.5;
+    }
+
+    .publication-authors {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+
+    .publication-authors strong {
+      color: #111827; /* black */
+    }
+
+    .publication-venue {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    .contact {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .contact a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .about-wrapper {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .location {
+        justify-content: center;
+      }
+
+      .about-text h1 {
+        font-size: 34px;
+      }
+
+      nav .nav-inner {
+        gap: 14px;
+      }
+
+      .nav-wrap {
+        top: 8px;
+        padding-top: 8px;
+      }
+
+      .news-main,
+      .news-title {
+        font-size: 16px;
+      }
+
+      .publication-item {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav-wrap">
+    <nav>
+      <div class="nav-inner">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <section id="about">
+    <div class="about-wrapper">
+      <div class="about-photo">
+        <img src="images/profile.jpg" alt="Profile Photo">
+      </div>
+
+      <div class="about-text">
+        <h1>Maryam Rezaie</h1>
+
+        <div class="location">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          </svg>
+          <span>Vancouver, Canada</span>
+        </div>
+
+        <p>
+          I’m a PhD candidate in Human-Computer Interaction and data visualization, focused on a simple but often overlooked problem: making complex systems truly understandable.
+        </p>
+
+        <p>
+          My research challenges the assumption that step-by-step guidance is the best way to onboard users. Instead, I study how people naturally make sense of unfamiliar interfaces, and I design interaction paradigms that support this process.
+        </p>
+
+        <p>
+          In my thesis, I introduce serendipitous explanations which is a new approach that provides embedded, in-situ explanations as users interact with interface elements, rather than guiding them through a fixed, predefined path. My contributions have been published in leading venues, including <em>IEEE TVCG</em> and <em>ACM PACM HCI</em>.
+        </p>
+
+        <p>
+          Recently, I interned at Autodesk, where I worked on visualizing uncertainty in AI to support more informed decision-making.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" class="container">
+    <div class="section-header">
+      <h2>News</h2>
+    </div>
+
+    <div class="news-list">
+      <div class="news-card">
+        <div class="news-date">June 2026</div>
+        <div class="news-main">Full paper accepted at EuroVis 2026!</div>
+        <div class="news-title">Serendipitous Explanations: Interaction-Triggered Comprehension Aids in Visualization</div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-date">April 2026</div>
+        <div class="news-main">I will be presenting my workshop paper at CHI 2026 in Barcelona.</div>
+        <div class="news-title">Toward Machine-Interpretable Spatial Organization Patterns: Learning from Creativity Traces</div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-date">April 2026</div>
+        <div class="news-main">PhD thesis defense scheduled! nearing completion of my PhD.</div>
+        <div class="news-title">Serendipitous Explanations for Visualization Comprehension</div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-date">November 2025</div>
+        <div class="news-main">Workshop paper accepted in InputVis at IEEE VIS!</div>
+        <div class="news-title">Encoding Future Intent Through Pulling Interactions in Input Visualizations</div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-date">Summer 2025</div>
+        <div class="news-main">Completed internship at Autodesk.</div>
+        <div class="news-title">Worked on visualizing uncertainty in AI to support more informed decision-making</div>
+      </div>
+    </div>
+
+    <div class="section-footer">
+      <a class="more-link" href="news.html">More News</a>
+    </div>
+  </section>
+
+  <section id="publications" class="container">
+    <div class="section-header">
+      <h2>Publications</h2>
+    </div>
+
+    <div class="publications">
+
+      <div class="publication-item">
+        <img src="images/pub1.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Serendipitous Explanations: Interaction-Triggered Comprehension Aids in Visualization</strong></h3>
+          <p class="publication-authors"><strong>Maryam Rezaie</strong>, Melanie Tory, and Sheelagh Carpendale</p>
+          <p class="publication-venue"><em>EuroVis</em>, 2026</p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub2.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Toward Machine-Interpretable Spatial Organization Patterns: Learning from Creativity Traces</strong></h3>
+          <p class="publication-authors"><strong>Maryam Rezaie</strong> and Sheelagh Carpendale</p>
+          <p class="publication-venue"><em>Herding CATs: Making Sense of Creative Activity Traces workshop @ CHI</em>, 2026</p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub3.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Studying Visual Evidence from Using Physical Space to Think</strong></h3>
+          <p class="publication-authors"><strong>Maryam Rezaie</strong>, Samuel Huron, Parnian Taghipour, Lien Quach, Victor Cheung, and Sheelagh Carpendale</p>
+          <p class="publication-venue"><em>Proceedings of the ACM on Human-Computer Interaction (PACMHCI)</em>, Vol. 9, No. 8, Article ISS011, 23 pages, 2025</p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub4.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Exploring Emerging Opportunities in Visualization Comprehension Research</strong></h3>
+          <p class="publication-authors"><strong>Maryam Rezaie</strong>, Melanie Tory, and Sheelagh Carpendale</p>
+          <p class="publication-venue"><em>Graphics Interface (GI)</em>, 2025</p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub5.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Encoding Future Intent Through Pulling Interactions in Input Visualizations</strong></h3>
+          <p class="publication-authors"><strong>Maryam Rezaie</strong> and Sheelagh Carpendale</p>
+          <p class="publication-venue">InputVis Workshop at <em>IEEE VIS</em>, 2025</p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub6.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Struggles and Strategies in Understanding Information Visualizations</strong></h3>
+          <p class="publication-authors"><strong>Maryam Rezaie</strong>, Melanie Tory, and Sheelagh Carpendale</p>
+          <p class="publication-venue"><em>IEEE Transactions on Visualization and Computer Graphics (TVCG)</em>, 2024</p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub7.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Summary of the Workshop on Interactions for Supporting Explanations and Promoting Comprehension</strong></h3>
+          <p class="publication-authors"><strong>Maryam Rezaie</strong>, Sydney Purdue, Anjali Khurana, Parmit Chilana, Melanie Tory, and Sheelagh Carpendale</p>
+          <p class="publication-venue"><em>Proceedings of the 2024 Conference on Interactive Surfaces and Spaces (ISS Companion '24)</em></p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub8.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Supporting Exploration of Women’s Print History Project Data via Interactively Constructing Networks of Interest</strong></h3>
+          <p class="publication-authors">Parnian Taghipour, <strong>Maryam Rezaie</strong>, Michelle Levy, Thomas Shermer, and Sheelagh Carpendale</p>
+          <p class="publication-venue"><em>Proceedings of the 2024 International Conference on Advanced Visual Interfaces (AVI '24)</em></p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub9.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>The Effect of Room Complexity on Physical Object Selection Performance in 3-D Mobile User Interfaces</strong></h3>
+          <p class="publication-authors"><strong>Maryam Rezaie</strong>, Morteza Malekmakan, Ali Asghar Nazari Shirehjini, and Shervin Shirmohammadi</p>
+          <p class="publication-venue"><em>IEEE Transactions on Human-Machine Systems</em>, 2020</p>
+        </div>
+      </div>
+
+      <div class="publication-item">
+        <img src="images/pub10.jpg" alt="Publication image">
+        <div class="publication-text">
+          <h3><strong>Let me Join Two Worlds! Analyzing the Integration of Web and Native Technologies in Hybrid Mobile Apps</strong></h3>
+          <p class="publication-authors">Shahrooz Pouryousef, <strong>Maryam Rezaie</strong>, and Ata Chizari</p>
+          <p class="publication-venue"><em>2018 IEEE International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom/BigDataSE)</em></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Email: maryam_rezaie (at) sfu.ca</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/mrymrzie/" target="_blank">linkedin.com/in/mrymrzie</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Maryam Rezaie
+  </footer>
+
+</body>
+</html>
